@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "prestart": "npm run build",
     "watch": "tsc --watch",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "start": "node build/index.js" 
