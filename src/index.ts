@@ -115,13 +115,12 @@ const transport = new SSEServerTransport({ server });
 // POST /mcp/message (or similar) for the client to send messages
 // Consult the @modelcontextprotocol/sdk documentation for the exact handlers/paths
 // provided by SSEServerTransport. These are common patterns:
-app.get('/mcp/sse', transport.handleEventStream);
-app.post('/mcp/message', transport.handleMessage);
+app.get('/mcp/sse', transport.handleEventStream); // Example path/handler
+app.post('/mcp/message', transport.handleMessage); // Example path/handler
 
 // Add a simple root endpoint for health checks or basic info
 app.get('/', (req, res) => {
-  res.status(200).send(`sendgrid-mcp-server v0.2.0 is running.`);
-
+  res.status(200).send(`${server.name} v${server.version} is running.`);
 });
 
 
